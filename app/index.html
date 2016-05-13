@@ -1,26 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--
-This is an HTML document. It contains information about how elements in the website
-are arranged. In other words, it describes the layout of a website.
 
-I can't wait to see the resumes you put together!
-
-Cameron Pittman, Udacity Course Developer
--->
-
-<!--
-The <head> of a website generally links to important resources the page will
-need to load. You'll see a lot of <link>s to CSS files for styles and
-<scripts> for JavaScript files to build interactions.
--->
 <head>
-  <!-- This tells the browser how to read the document. -->
   <meta charset="utf-8">
   <meta name="description" content="personal resume">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Tells the browser what the title of this page should be. -->
   <title>Resume</title>
 
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -35,9 +20,6 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
 
-  <!-- More on helper.js in the class -->
-  <script src="js/helper.js"></script>
-
   <!--
   Uncomment the <script> tag below when you're ready to add an interactive
   Google Map to your resume!
@@ -48,14 +30,6 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 </head>
 <body>
   <div id="main">
-    Hello world!   <!-- You'll be deleting this line in the course -->
-
-    <!--
-    Everything from here to the <script> tag below is the skeleton of your
-    website. Your code will add information to each of the sections of the
-    resume below. You can pretty easily figure out what each section will
-    display by looking at the id or at what's written between the <h2> tags.
-    -->
     <div id="header" class="center-content clear-fix">
       <ul id="topContacts" class="flex-box"></ul>
     </div>
@@ -79,34 +53,18 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     </div>
   </div>
 
-  <!--
-  The next line tells the browser where to download the JavaScript file you'll be
-  writing. In resumeBuilder.js, you'll be writing code that builds the resume
-  dynamically when this website, index.html, is opened.
-  -->
-  <script src="js/resumeBuilder.js"></script>
-
-
-  <!--
-  These scripts are written in JavaScript. You'll be breaking them down as part of
-  a quiz. Essentially, the next few lines are checking to see if you have not
-  changed each section of the resume. If you have not made any changes to a section
-  of the resume, then that part of the resume does not show up. More on this in the
-  course.
-  -->
-
   <!-- build:js scripts/vendor.js -->
   <!-- bower:js -->
   <script src="/bower_components/jquery/dist/jquery.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
   
-  <!-- build:js scripts/main.js -->
-  <script src="scripts/main.js"></script>
-  <!-- endbuild -->
-  
   <!-- build:js scripts/helper.js -->
-  <script src="scripts/main.js"></script>
+  <script src="scripts/helper.js"></script>
+  <!-- endbuild -->
+
+  <!-- build:js scripts/resumeBuilder.js -->
+  <script src="scripts/resumeBuilder.js"></script>
   <!-- endbuild -->
 
   <script type="text/javascript">
