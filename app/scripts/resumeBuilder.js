@@ -173,44 +173,6 @@ projects.display();
 education.display();
 $('#mapDiv').append(googleMap);
 
-
-// if(work.jobs.length) {
-// 		displayWork();
-// }
-
-// if(projects.projects.length) {
-// 		projects.display();
-// }
-
-// function displayWork() {
-// 	work.jobs.forEach(function(job){
-// 	var formattedTitle = HTMLworkEmployer.replace(pHolder, job.employer) + HTMLworkTitle.replace(pHolder, job.title);
-// 		$('#workExperience').append(HTMLworkStart);
-// 		$('.work-entry:last').append(formattedTitle);
-// 		$('.work-entry:last').append(HTMLworkDates.replace(pHolder, job.dates.join(' - ')));
-// 		$('.work-entry:last').append(HTMLworkLocation.replace(pHolder, job.location));
-// 		$('.work-entry:last').append(HTMLworkDescription.replace(pHolder, job.description));
-// 	});
-// }
-
-// function inName(name) {
-// 	var fullName = name.split(" ");
-
-// 	if(fullName.length <= 1) {
-// 		throw new Error('There\'s only one name, provide more information, please!');
-// 	}
-
-// 	// Here we Capitalize all names (in case more than ONE)
-// 	for(var i=0, max=fullName.length-1; i<max; i+=1) {
-// 		fullName[i] = fullName[i].charAt(0).toUpperCase() + fullName[i].slice(1).toLowerCase();
-// 	}
-
-// 	// Here we change surname to uppercase
-// 	fullName[fullName.length-1] = fullName[fullName.length-1].toUpperCase();
-
-// 	return fullName.join(" ");
-// }
-
 function formatEntry(formatter, data) {
 	return formatter.replace(pHolder, data);
 }
