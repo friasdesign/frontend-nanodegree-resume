@@ -60,7 +60,7 @@ var bio = {
 					"title": "Cine Rio Grande",
 					"dates": ["2014", "2015"],
 					"description": "A college project with the object of creating a brand new web site for a cinema that integrates requirements for TPS, MIS and DSS",
-					"images": ["http://placehold.it/600x450"]
+					"images": ["http://placehold.it/600x450", "http://placehold.it/600x450"]
 				}
 			],
 
@@ -97,6 +97,18 @@ var pHolder = "%data%",
 var headerSel = $('#header'),
 		contactSel = $('#topContacts');
 
+projects.display = function() {
+	this.projects.forEach(function(project){
+		$('#projects').append(HTMLprojectStart);
+		$('.project-entry:last').append(HTMLprojectTitle.replace(pHolder, project.title));
+		$('.project-entry:last').append(HTMLprojectDates.replace(pHolder, project.dates.join(" - ")));
+		$('.project-entry:last').append(HTMLprojectDescription.replace(pHolder, project.description));
+		project.images.forEach(function(image){
+			$('.project-entry:last').append(HTMLprojectImage.replace(pHolder, image));
+		});
+	});
+};
+
 // Header
 headerSel.prepend(formattedRole);
 headerSel.prepend(formattedName);
@@ -111,19 +123,45 @@ headerSel.append(formattedWelcome);
 
 if(bio.skills.length) {
 	headerSel.append(HTMLskillsStart);
-	bio.skills.forEach(function(skill){
+	bio.skills.forEach(function formatSkills(skill){
 		var formattedSkill = HTMLskills.replace(pHolder, skill);
 		$('#skills').append(formattedSkill);
 	});
 }
 
 if(work.jobs.length) {
+		displayWork();
+}
+
+if(projects.projects.length) {
+		projects.display();
+}
+
+function displayWork() {
 	work.jobs.forEach(function(job){
-		var formattedTitle = HTMLworkEmployer.replace(pHolder, job.employer) + HTMLworkTitle.replace(pHolder, job.title);
+	var formattedTitle = HTMLworkEmployer.replace(pHolder, job.employer) + HTMLworkTitle.replace(pHolder, job.title);
 		$('#workExperience').append(HTMLworkStart);
 		$('.work-entry:last').append(formattedTitle);
 		$('.work-entry:last').append(HTMLworkDates.replace(pHolder, job.dates.join(' - ')));
 		$('.work-entry:last').append(HTMLworkLocation.replace(pHolder, job.location));
 		$('.work-entry:last').append(HTMLworkDescription.replace(pHolder, job.description));
 	});
+}
+
+function inName(name) {
+	var fullName = name.split(" ");
+
+	if(fullName.length <= 1) {
+		throw new Error('There\'s only one name, provide more information, please!');
+	}
+
+	// Here we Capitalize all names (in case more than ONE)
+	for(var i=0, max=fullName.length-1; i<max; i+=1) {
+		fullName[i] = fullName[i].charAt(0).toUpperCase() + fullName[i].slice(1).toLowerCase();
+	}
+
+	// Here we change surname to uppercase
+	fullName[fullName.length-1] = fullName[fullName.length-1].toUpperCase();
+
+	return fullName.join(" ");
 }
