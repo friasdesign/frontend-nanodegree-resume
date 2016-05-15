@@ -11,7 +11,6 @@ var bio = {
 				"twitter": ""
 			},
 			"picture": "http://placehold.it/300x300",
-			"welcome": "Hi! I\"m Carlos Frias, check my resume and contact with me! :D",
 			"skills": [
 				"UI design",
 				"UX design",
@@ -88,34 +87,30 @@ var bio = {
 		};
 
 const pHolder = "%data%";
-var formattedName = HTMLheaderName.replace(pHolder, bio.name),
-		formattedRole = HTMLheaderRole.replace(pHolder, bio.role),
-		formattedPic = HTMLbioPic.replace(pHolder, bio.picture),
-		formattedWelcome = HTMLwelcomeMsg.replace(pHolder, bio.welcome);
 
-var headerSel = $('#header'),
+var headerSel = $('header'),
 		contactSel = $('#topContacts');
 
 // --> DEFINING DISPLAY METHOD _____________________________________
 
 // Bio
 bio.display = function displayBio() {
+	var bannerSel = $('div[role="banner"]');
 	// Display Role and Name
-	headerSel.prepend(formatEntry(HTMLheaderRole, this.role));
-	headerSel.prepend(formatEntry(HTMLheaderName, this.name));
+	bannerSel.prepend(formatEntry(HTMLheaderRole, this.role));
+	bannerSel.prepend(formatEntry(HTMLheaderName, this.name));
 
 	// Display contactInfo
 	displayer.call(this.contactInfo, contactInfoFormatter, contactSel);
 
 	// Display Picture and Message
 	headerSel.append(formatEntry(HTMLbioPic, this.picture));
-	headerSel.append(formatEntry(HTMLwelcomeMsg, this.welcome));
 
 	// Display Skills
 	if(this.skills.length) {
-	headerSel.append(HTMLskillsStart);
+	$('#skills').append(HTMLskillsStart);
 	this.skills.forEach(function formatSkills(skill){
-			$('#skills').append(formatEntry(HTMLskills, skill));
+			$('#skills-list').append(formatEntry(HTMLskills, skill));
 		});
 	}
 };

@@ -13,22 +13,22 @@ These are HTML strings. As part of the course, you'll be using JavaScript functi
 replace the %data% placeholder text you see in them.
 */
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<span>%data%</span><hr>';
+var HTMLheaderRole = '<span>%data%</span>';
 
 var contactInfoFormatter = {
-  generic: '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>',
-  mobile: '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>',
-  email: '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>',
-  twitter: '<li class="flex-item"><span class="orange-text">twitter</span><span class="white-text">%data%</span></li>',
-  github: '<li class="flex-item"><span class="orange-text">github</span><span class="white-text">%data%</span></li>',
-  blog: '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>',
-  location: '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>'
+  generic: '<li><span class="contact-label">%contact%</span><span class="contact-data">%data%</span></li>',
+  mobile: '<li><span class="contact-label">mobile</span><span class="contact-data">%data%</span></li>',
+  email: '<li><span class="contact-label">email</span><span class="contact-data">%data%</span></li>',
+  twitter: '<li><span class="contact-label">twitter</span><span class="contact-data">%data%</span></li>',
+  github: '<li><span class="contact-label">github</span><span class="contact-data">%data%</span></li>',
+  blog: '<li><span class="contact-label">blog</span><span class="contact-data">%data%</span></li>',
+  location: '<li><span class="contact-label">location</span><span class="contact-data">%data%</span></li>'
 };
 
-var HTMLbioPic = '<img src="%data%" class="biopic">';
+var HTMLbioPic = '<p><img src="%data%" class="biopic"></p>';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
-var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
+var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills-list" class="flex-box"></ul>';
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';

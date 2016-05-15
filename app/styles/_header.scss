@@ -1,0 +1,83 @@
+$banner: '[role="banner"]';
+
+header {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#{$banner} {
+	display: flex;
+	order: 0;
+	width: 100%;
+	flex-wrap: wrap;
+	padding-top: 1.2em;
+
+	&:after {
+		content: url('../images/coffeering.svg');
+		width: 200px;
+		position: absolute;
+		top: 2em;
+		right: 0em;
+		opacity: 0.6;
+	}
+}
+
+#{$banner}>h1 {
+	width: 100%;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+#{$banner}>span {
+	width: 100%;
+}
+
+#{$banner}>hr {
+	margin-top: 1em;
+	width: 100%;
+}
+
+header>p {
+	order: 1;
+	margin: 1em;
+	padding: 1em;
+	width: 100%;
+	text-align: center;
+	box-shadow: 2px 2px 8px #ADADAD;
+	background-color: #F9F9F9;
+}
+
+.biopic {
+}
+
+#topContacts {
+	order: 3;
+}
+
+#skills {
+	order: 4;
+
+	&:before {
+		font-family: 'Homemade Apple', cursive;
+		font-size: 0.8em;
+		color: rgba(62,125,188, 0.8);
+		position: relative;
+		content: "to call";
+		top: 16em;
+		left: 15em;
+		transform: rotate(-90deg);
+	}
+}
+
+.contact-label {
+	text-transform: uppercase;
+	color: $colorGrey;
+	&:after{
+		content: ":";
+		margin-right: 0.2em;
+	}
+}
+
+.contact-data {
+	// font-size: 0.9em;	
+}
