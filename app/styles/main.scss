@@ -203,6 +203,24 @@ a {
 	}
 }
 
+.project-entry {
+	// @include mobileFirst (600px) {
+	// 	display: flex;
+	// 	flex-wrap: wrap;
+	// 	justify-content: space-between;
+	// 	height: 100%;
+	// }
+	&>img {
+		margin-right: 2%;
+		@include mobileFirst (600px) {
+			width: 49%;
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
 // @media only screen and (min-width: 750px) {
 //   #skills-h3,
 //   .biopic {

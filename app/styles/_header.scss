@@ -3,6 +3,7 @@ $banner: '[role="banner"]';
 header {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 #{$banner} {
@@ -45,14 +46,15 @@ header>p {
 	text-align: center;
 	box-shadow: 2px 2px 8px #ADADAD;
 	background-color: #F9F9F9;
-}
 
-.biopic {
+	@include mobileFirst(600px) {
+		width: 50%;
+	}
 }
 
 #topContacts {
 	order: 3;
-	max-width: 100%;
+	width: 100%;
 	&:before {
 		@include annotation ("call him later", 11em, 1em, -14);
 		font-size: 1.6em;
@@ -60,16 +62,27 @@ header>p {
 		@include mobileFirst(500px) {
 			top: 19em;
 		}
+		@include mobileFirst(600px) {
+			top: 16em;
+			right: 13em;
+		}
+	}
+	@include mobileFirst(600px) {
+			margin-top: 1em;
+			order: 3;
 	}
 }
 
 #skills {
-	order: 4;
+	order: 2;
 
 	&:before {
 		@include annotation ("ask IT for Yeoman", 62em, 4em, -16);
 		@include mobileFirst(500px) {
 			top: 70em;
+		}
+		@include mobileFirst(600px) {
+			top: 30em;
 		}
 	}
 	&:after {
@@ -77,6 +90,13 @@ header>p {
 		@include mobileFirst(500px) {
 			top: 78em;
 		}
+		@include mobileFirst(600px) {
+			top: 35em;
+		}
+	}
+
+	@include mobileFirst(600px) {
+		width: 40%;
 	}
 }
 
@@ -91,4 +111,8 @@ header>p {
 
 .contact-data {
 	font-size: 0.8em;
+	
+	@include mobileFirst(600px) {
+		font-size: 1em;
+	}
 }
