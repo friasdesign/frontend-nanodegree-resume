@@ -10,7 +10,7 @@ var bio = {
 				"location": "Rio Fuego 3490, Rio Grande, Tierra del Fuego, Argentina",
 				"twitter": ""
 			},
-			"picture": "http://placehold.it/300x300",
+			"picture": "images/picture.jpg",
 			"skills": [
 				"UI design",
 				"UX design",
@@ -81,7 +81,7 @@ var bio = {
 					"title": "Front-end Developer Nanodegree",
 					"school": "Udacity",
 					"dates": ["2016", "2016"],
-					"url": "http://www.udacity.com"
+					"url": "www.udacity.com"
 				}
 			]
 		};
