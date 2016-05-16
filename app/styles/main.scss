@@ -29,7 +29,6 @@ body {
 	@include mobileFirst(1200px) {
 		display: block;
 		position: absolute;
-		// background-color: black;
 		top: 0;
 		right: 0;
 		width: 300px;
@@ -52,7 +51,6 @@ body {
 	@include mobileFirst(1200px) {
 		display: block;
 		position: absolute;
-		// background-color: black;
 		top: 35em;
 		right: 0;
 		width: 400px;
@@ -269,7 +267,7 @@ a {
 	// }
 	&>img {
 		margin-right: 2%;
-		@include mobileFirst (600px) {
+		@include mobileFirst (560px) {
 			width: 49%;
 		}
 		&:last-child {
