@@ -17,8 +17,58 @@ body {
   	position: absolute;
 		right: 1em;
 		top: 0.2em;
+		@include mobileFirst(760px) {
+			right: 40%;
+		}
   }
   @include folderBackground();
+}
+
+#coffee {
+	display: hidden;
+	@include mobileFirst(1200px) {
+		display: block;
+		position: absolute;
+		// background-color: black;
+		top: 0;
+		right: 0;
+		width: 300px;
+		height: 300px;
+		overflow: hidden;
+		&:before {
+			position: relative;
+			display: block;
+			overflow: hidden;
+			top: -3em;
+			right: 0;
+			width: 300px;
+			content: url('../images/coffee.svg');
+		}
+	}
+}
+
+#pen {
+	display: hidden;
+	@include mobileFirst(1200px) {
+		display: block;
+		position: absolute;
+		// background-color: black;
+		top: 35em;
+		right: 0;
+		width: 400px;
+		height: 50px;
+		overflow: hidden;
+		transform: rotate(20deg);
+		&:before {
+			position: relative;
+			display: block;
+			overflow: hidden;
+			top: 0em;
+			right: 0;
+			width: 100%;
+			content: url('../images/pen.svg');
+		}
+	}
 }
 
 img {
@@ -32,6 +82,13 @@ p {
 #main {
   padding: 0 1.5em;
   @include paperBackground();
+  box-shadow: 1px 1px 4px #333;
+  @include mobileFirst(980px) {
+  	max-width: 980px;
+  	padding: 0 3em;
+  	margin-right: auto;
+  	margin-left: auto;
+  }
 }
 
 .location-text {

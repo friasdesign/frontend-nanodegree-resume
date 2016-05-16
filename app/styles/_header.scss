@@ -20,6 +20,10 @@ header {
 		top: 2em;
 		right: 0em;
 		opacity: 0.6;
+		@include mobileFirst(800px) {
+			top: 5em;
+			left: 60%;
+		}
 	}
 }
 
@@ -66,6 +70,10 @@ header>p {
 			top: 16em;
 			right: 13em;
 		}
+		@include mobileFirst(800px) {
+			top: 20em;
+			right: 43%;
+		}
 	}
 	@include mobileFirst(600px) {
 			margin-top: 1em;
@@ -84,6 +92,14 @@ header>p {
 		@include mobileFirst(600px) {
 			top: 30em;
 		}
+		@include mobileFirst(1000px) {
+			top: 28em;
+			right: 15%;
+		}
+		@include mobileFirst(1400px) {
+			top: 28em;
+			right: 30%;
+		}
 	}
 	&:after {
 		@include annotation ("speaks Spanish, amigo!", 70em, 4em, -12);
@@ -92,6 +108,14 @@ header>p {
 		}
 		@include mobileFirst(600px) {
 			top: 35em;
+		}
+		@include mobileFirst(1000px) {
+			top: 35em;
+			right: 15%;
+		}
+		@include mobileFirst(1400px) {
+			top: 35em;
+			right: 30%;
 		}
 	}
 
