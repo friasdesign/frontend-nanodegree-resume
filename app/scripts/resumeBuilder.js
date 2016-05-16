@@ -1,5 +1,6 @@
 /*jshint esversion: 6 */
 
+// TODO: add source images for 1x and 2x, min images
 var bio = {
 			"name": "Carlos Frias",
 			"role": "Front-end Developer",

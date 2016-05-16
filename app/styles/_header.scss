@@ -4,6 +4,20 @@ header {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+
+	&>p {
+		order: 0;
+		margin: 1em;
+		padding: 1em;
+		width: 100%;
+		text-align: center;
+		box-shadow: 2px 2px 8px #ADADAD;
+		background-color: #F9F9F9;
+
+		@include mobileFirst(560px) {
+			width: 50%;
+		}
+	}
 }
 
 #{$banner} {
@@ -25,34 +39,18 @@ header {
 			left: 60%;
 		}
 	}
-}
+	&>h1 {
+		width: 100%;
+		margin: 0;
+		text-transform: uppercase;
+	}
+	&>span {
+		width: 100%;
+	}
 
-#{$banner}>h1 {
-	width: 100%;
-	margin: 0;
-	text-transform: uppercase;
-}
-
-#{$banner}>span {
-	width: 100%;
-}
-
-#{$banner}>hr {
-	margin-top: 1em;
-	width: 100%;
-}
-
-header>p {
-	order: 0;
-	margin: 1em;
-	padding: 1em;
-	width: 100%;
-	text-align: center;
-	box-shadow: 2px 2px 8px #ADADAD;
-	background-color: #F9F9F9;
-
-	@include mobileFirst(560px) {
-		width: 50%;
+	&>hr {
+		margin-top: 1em;
+		width: 100%;
 	}
 }
 
