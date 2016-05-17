@@ -20,6 +20,40 @@ header {
 	}
 }
 
+#nav-list {
+	display: flex;
+	flex-wrap: wrap;
+	position: absolute;
+	font-size: 0.8em;
+	width:10%;
+	left: 0em;
+	text-align: center;
+	text-transform: uppercase;
+	opacity: 0.5;
+	&>li {
+		display: inline-block;
+		background: #c7c7c7;
+		color: #333;
+		min-height: 48px;
+		margin: 0.5em 0 0 0;
+		padding-top: 20%;
+		width: 70%;
+		&:before{
+			content: none;
+		}
+		&.active {
+			width: 100%;
+			background-color: #333;
+			&>a {
+				color: #c7c7c7;
+			}
+		}
+		&>a {
+			color: #797979;
+		}
+	}
+}
+
 #{$banner} {
 	display: flex;
 	order: 0;
@@ -45,7 +79,7 @@ header {
 		text-transform: uppercase;
 	}
 	&>span {
-		width: 100%;
+		width: 80%;
 	}
 
 	&>hr {
@@ -57,24 +91,6 @@ header {
 #topContacts {
 	order: 2;
 	width: 100%;
-	&:before {
-		@include annotation ("call him later", 11em, 1em, -14);
-		font-size: 1.6em;
-		text-decoration: underline;
-		@include mobileFirst(500px) {
-			top: 19em;
-		}
-		@include mobileFirst(560px) {
-			top: 16em;
-			right: 13em;
-			margin-top: 1em;
-			order: 3;
-		}
-		@include mobileFirst(800px) {
-			top: 20em;
-			right: 43%;
-		}
-	}
 }
 
 #skills {

@@ -30,13 +30,40 @@
   <meta name="viewport" content="width=device-width">
 </head>
 <body>
+  <!-- TAB TEMPLATE -->
+  <!-- <svg height="0" width="0" style="position: absolute; margin-left: -100%;">
+    <path id="tab-shape" class="tab-shape" d="M116.486,29.036c-23.582-8-14.821-29-42.018-29h-62.4C5.441,0.036,0,5.376,0,12.003v28.033h122v-11H116.486
+            z">
+  </svg> -->
   <div id="coffee"></div>
   <div id="pen"></div>
   <div id="main">
     <header>
-      <div role="banner"><hr></div>
+      <div role="banner">
+        <hr>
+        <!-- <nav>
+          <ul id="nav-list">
+            <li id="nav-en" class="active">
+              <a href="#">
+                <span>En</span>
+              </a>
+            </li>
+            <li id="nav-es">
+            <a href="#">
+                <span>Es</span>
+            </a>
+            </li>
+            <li id="nav-jp">
+              <a href="#">
+                <span>日</span>
+              </a>
+            </li>
+          </ul>
+        </nav> -->
+      </div>
       <ul id="topContacts"></ul>
-      <div id="skills"></div>
+      <div id="skills">
+      </div>
     </header>
     <div id="workExperience" class="gray">
       <h2>Work Experience</h2>
@@ -57,18 +84,17 @@
       </ul>
   </footer>
 
-  <!-- build:js scripts/vendor.js -->
+  
+  
+  <!-- build:js scripts/app.js -->
   <!-- bower:js -->
   <script src="/bower_components/jquery/dist/jquery.js"></script>
   <script src="/bower_components/picturefill/dist/picturefill.js"></script>
   <!-- endbower -->
-  <!-- endbuild -->
-  
-  <!-- build:js scripts/helper.js -->
+  <script src="scripts/en.js"></script>
+  <!-- <script src="scripts/es.js"></script> -->
+  <!-- <script src="scripts/jp.js"></script> -->
   <script src="scripts/helper.js"></script>
-  <!-- endbuild -->
-
-  <!-- build:js scripts/resumeBuilder.js -->
   <script src="scripts/resumeBuilder.js"></script>
   <!-- endbuild -->
 

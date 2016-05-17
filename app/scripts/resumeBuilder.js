@@ -1,93 +1,8 @@
-/*jshint esversion: 6 */
+/*eslint-env jquery*/
 
 // TODO: add source images for 1x and 2x, min images
-var bio = {
-			"name": "Carlos Frias",
-			"role": "Front-end Developer",
-			"contactInfo": {
-				"mobile": "+54 9 (02964) 15-510169",
-				"email": "carlos.a.frias@gmail.com",
-				"github": "friasdesign",
-				"location": "Rio Fuego 3490, Rio Grande, Tierra del Fuego, Argentina",
-				"twitter": ""
-			},
-			"picture": "images/picture.jpg",
-			"skills": [
-				"UI design",
-				"UX design",
-				"JavaScript",
-				"ReactJS",
-				"Jasmine",
-				"Karma",
-				"AngularJS",
-				"HTML5",
-				"CSS3",
-				"Yeoman",
-				"Gulp",
-				"Graphic Design",
-				"Linux",
-				"Spanish",
-				"Japanese",
-				"English"
-			]
-		},
-		work = {
-			"jobs": [
-				{
-					"employer": "Brightstar Fueguina SA",
-					"title": "Production Operator",
-					"location": "Rio Grande, Tierra del Fuego, Argentina",
-					"dates": ["2012", "2013"],
-					"description": "Follow instructions from process engineers and accomplish production goals"
-				},
-				{
-					"employer": "Diario Provincia 23",
-					"title": "IT Consultant and Junior Designer",
-					"location": "Rio Grande, Tierra del Fuego, Argentina",
-					"dates": ["2013", "2015"],
-					"description": "Design ads for newspapers, assist in IT (i.e. network troubleshooting, OS installing, PC cleaning)"
-				},
-				{
-					"employer": "Digital Fueguina SA",
-					"title": "Maintenance Operator",
-					"location": "Rio Grande, Tierra del Fuego, Argentina",
-					"dates": ["2015", "2015"],
-					"description": "Follow instructions from Maintenance engineers for tasks such as: creating workstations, creating tools for production."
-				}
-			]
-		},
-		projects = {
-			"projects": [
-				{
-					"title": "Cine Rio Grande",
-					"dates": ["2014", "2015"],
-					"description": "A college project with the object of creating a brand new web site for a cinema that integrates requirements for TPS, MIS and DSS",
-					"images": ["http://placehold.it/600x450", "http://placehold.it/600x450"]
-				}
-			],
 
-		},
-		education = {
-			"schools": [
-				{
-					"name": "Facultad Regional Rio Grande de la UTN",
-					"city": "Rio Grande, Tierra del Fuego, Argentina",
-					"degree": "Technical Degree",
-					"dates": ["2013", "2015"],
-					"major": "Programming"
-				}
-			],
-			"onlineCourses": [
-				{
-					"title": "Front-end Developer Nanodegree",
-					"school": "Udacity",
-					"dates": ["2016", "2016"],
-					"url": "www.udacity.com"
-				}
-			]
-		};
-
-const pHolder = "%data%";
+const pHolder = '%data%';
 
 var headerSel = $('header'),
 		contactSel = $('#topContacts');
@@ -169,6 +84,11 @@ projects.display();
 education.display();
 $('#mapDiv').append(googleMap);
 
+$('#nav-list').children('li').on('click', function toggleActive() {
+	$(this).siblings('.active').toggleClass('active');
+	$(this).toggleClass('active');
+});
+
 function formatEntry(formatter, data) {
 	return formatter.replace(pHolder, data);
 }
@@ -184,8 +104,7 @@ function displayer(formatter, selector) {
 			}else {
 				formattedItem = formatEntry(formatter[item], this[item]);
 			}
-			
-			if(formatter[item].charAt(formatter[item].length-1) == '>') {
+			if(formatter[item].charAt(formatter[item].length - 1) === '>') {
 				if(last) {
 					formattedItem = last + formattedItem;
 					last = false;

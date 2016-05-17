@@ -188,9 +188,10 @@ const baseConversion = function(src, dest, size, format) {
     .pipe(gulp.dest(baseDir + dest));
 };
 
-var resizeImageTasks = [];
+var resizeImageTasks = [],
+    imageSizes = [375,750,660,1320];
 
-[375,750,660,1320].forEach(function(size){
+imageSizes.forEach(function(size){
   var taskName = '';
 
   // ORIGINAL FORMAT __________________________________________________
