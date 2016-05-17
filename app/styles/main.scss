@@ -79,6 +79,7 @@ p {
 
 #main {
   padding: 0 1.5em;
+  min-height: 100vw;
   @include paperBackground();
   box-shadow: 1px 1px 4px #333;
   @include mobileFirst(980px) {

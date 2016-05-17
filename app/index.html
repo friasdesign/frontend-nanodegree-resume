@@ -25,9 +25,10 @@
   Uncomment the <script> tag below when you're ready to add an interactive
   Google Map to your resume!
   -->
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
-
-  <meta name="viewport" content="width=device-width">
+  <!-- build:js scripts/top.js -->
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"defer></script>
+  <script src="/bower_components/picturefill/dist/picturefill.js"></script>
+  <!-- endbuild -->
 </head>
 <body>
   <!-- TAB TEMPLATE -->
@@ -83,57 +84,15 @@
         <ul id="footerContacts" class="flex-box">
       </ul>
   </footer>
-
-  
-  
   <!-- build:js scripts/app.js -->
   <!-- bower:js -->
-  <script src="/bower_components/jquery/dist/jquery.js"></script>
-  <script src="/bower_components/picturefill/dist/picturefill.js"></script>
+  <script src="/bower_components/jquery/dist/jquery.js"></script>  
   <!-- endbower -->
   <script src="scripts/en.js"></script>
-  <!-- <script src="scripts/es.js"></script> -->
-  <!-- <script src="scripts/jp.js"></script> -->
+  <!-- <script src="scripts/es.js" defer></script>
+  <script src="scripts/jp.js" defer></script> -->
   <script src="scripts/helper.js"></script>
   <script src="scripts/resumeBuilder.js"></script>
   <!-- endbuild -->
-
-  <script type="text/javascript">
-    // Notice how all of a sudden there's JavaScript inside this HTML
-    // document? You can write JavaScript between <script> tags. At the end of your
-    // JavaScript, don't forget the closing script tag with the slash (/).
-
-
-    // Also, this is a JavaScript style comment. You can comment in JavaScript with:
-
-    //   two slashes for all following characters on a single line, or
-
-    /*
-        an opening and closing set of slash asterisks for block comments.
-    */
-
-
-    if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('topContacts').style.display = 'none';
-    }
-    if(document.getElementsByTagName('h1').length === 0) {
-      document.getElementById('header').style.display = 'none';
-    }
-    if(document.getElementsByClassName('work-entry').length === 0) {
-      document.getElementById('workExperience').style.display = 'none';
-    }
-    if(document.getElementsByClassName('project-entry').length === 0) {
-      document.getElementById('projects').style.display = 'none';
-    }
-    if(document.getElementsByClassName('education-entry').length === 0) {
-      document.getElementById('education').style.display = 'none';
-    }
-    if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('lets-connect').style.display = 'none';
-    }
-    if(document.getElementById('map') === null) {
-      document.getElementById('mapDiv').style.display = 'none';
-    }
-  </script>
 </body>
 </html>

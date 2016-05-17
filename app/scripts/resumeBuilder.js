@@ -76,17 +76,17 @@ education.display = function displayEducation() {
 
 // <-- END - DEFINING DISPLAY METHOD _______________________________
 
-// Header
-
-bio.display();
-work.display();
-projects.display();
-education.display();
-$('#mapDiv').append(googleMap);
-
-$('#nav-list').children('li').on('click', function toggleActive() {
-	$(this).siblings('.active').toggleClass('active');
-	$(this).toggleClass('active');
+$(function main(){
+	bio.display();
+	work.display();
+	projects.display();
+	education.display();
+	$('#mapDiv').append(googleMap);
+	$('#nav-list').children('li').on('click', function toggleActive() {
+		$(this).siblings('.active').toggleClass('active');
+		$(this).toggleClass('active');
+	});
+	initializeMap();
 });
 
 function formatEntry(formatter, data) {
