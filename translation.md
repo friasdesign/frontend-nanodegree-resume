@@ -81,3 +81,15 @@ Add the following snippet:
     }
 }
 ```
+
+---
+
+## In `resumeBuilder.js`
+
+Add the following in main function:
+``` javascript
+$('#nav-list').children('li').on('click', function toggleActive() {
+    $(this).siblings('.active').toggleClass('active');
+    $(this).toggleClass('active');
+});
+```

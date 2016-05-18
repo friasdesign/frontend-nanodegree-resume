@@ -113,7 +113,8 @@ header {
 
 .contact-data {
 	font-size: 0.8em;
-	
+	display: inline;
+	margin: 0;
 	@include mobileFirst(600px) {
 		font-size: 1em;
 	}

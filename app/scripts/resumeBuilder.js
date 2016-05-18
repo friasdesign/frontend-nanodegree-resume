@@ -8,8 +8,11 @@ var bio = {
 	'contactInfo': {
 		'mobile': '+54 9 (02964) 15-510169',
 		'email': 'carlos.a.frias@gmail.com',
-		'github': 'friasdesign',
-		'location': 'Rio Fuego 3490, Rio Grande, Tierra del Fuego, Argentina',
+		'github': {
+			'account': 'friasdesign',
+			'url': 'https://github.com/friasdesign'
+		},
+		'location': 'Rio Grande, Tierra del Fuego, Argentina',
 		'twitter': ''
 	},
 	'picture': {
@@ -79,6 +82,13 @@ var projects = {
 };
 var education = {
 	'schools': [
+		{
+			'name': 'Escuela Superior de Musica de la UNT',
+			'city': 'San Miguel de Tucuman, Tucuman, Argentina',
+			'degree': 'Technical Degree',
+			'dates': ['2008', '2011'],
+			'major': 'Musical Education - Piano'
+		},
 		{
 			'name': 'Facultad Regional Rio Grande de la UTN',
 			'city': 'Rio Grande, Tierra del Fuego, Argentina',
@@ -161,7 +171,6 @@ education.display = function displayEducation() {
 	var selector = {};
 	if(education.schools.length) {
 		this.schools.forEach(function(school){
-			console.log('got it');
 			$('#education').append(HTMLschoolStart);
 			selector = $('.education-entry:last');
 			displayer.call(school, schoolFormatter, selector);
@@ -185,16 +194,13 @@ $(function main(){
 	projects.display();
 	education.display();
 	$('#mapDiv').append(googleMap);
-	$('#nav-list').children('li').on('click', function toggleActive() {
-		$(this).siblings('.active').toggleClass('active');
-		$(this).toggleClass('active');
-	});
 	$('#footerContacts').html($('#topContacts').html());
 	initializeMap();
 });
 
 function formatEntry(formatter, data, pHolder = '%data%') {
-	return formatter.replace(pHolder, data);
+	var reg = new RegExp (pHolder, 'g');
+	return formatter.replace(reg, data);
 }
 
 function displayer(formatter, selector) {
@@ -205,7 +211,12 @@ function displayer(formatter, selector) {
 
 			if(Array.isArray(this[item])) {
 				formattedItem = formatEntry(formatter[item], this[item].join(' - '));
-			}else {
+			}
+			else if(typeof this[item] === 'object') {
+				formattedItem = formatEntry(formatter[item], this[item].account);
+				formattedItem = formatEntry(formattedItem, this[item].url, '%url%');
+			}
+			else {
 				formattedItem = formatEntry(formatter[item], this[item]);
 			}
 			if(formatter[item].charAt(formatter[item].length - 1) === '>') {

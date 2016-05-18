@@ -15,19 +15,19 @@ var HTMLheaderRole = '<span>%data%</span>';
 
 var contactInfoFormatter = {
   generic: '<li><span class="contact-label">%contact%</span><span class="contact-data">%data%</span></li>',
-  mobile: '<li><span class="contact-label">mobile</span><span class="contact-data">%data%</span></li>',
-  email: '<li><span class="contact-label">email</span><span class="contact-data">%data%</span></li>',
-  twitter: '<li><span class="contact-label">twitter</span><span class="contact-data">%data%</span></li>',
-  github: '<li><span class="contact-label">github</span><span class="contact-data">%data%</span></li>',
-  blog: '<li><span class="contact-label">blog</span><span class="contact-data">%data%</span></li>',
+  mobile: '<li><span class="contact-label">mobile</span><a href="tel:%data%" class="contact-data">%data%</a></li>',
+  email: '<li><span class="contact-label">email</span><a href="mailto:%data%" class="contact-data">%data%</a></li>',
+  twitter: '<li><span class="contact-label">twitter</span><a href="%url%" class="contact-data">%data%</a></li>',
+  github: '<li><span class="contact-label">github</span><a href="%url%" class="contact-data">%data%</a></li>',
+  blog: '<li><span class="contact-label">blog</span><a class="contact-data">%data%</a></li>',
   location: '<li><span class="contact-label">location</span><span class="contact-data">%data%</span></li>'
 };
 
 var HTMLbioPic = '<p><img srcset="%set%" src="%data%" class="biopic" alt="Picture of me and monitors behind"></p>';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
-var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills-list" class="flex-box"></ul>';
-var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
+var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills-list"></ul>';
+var HTMLskills = '<li><span class="white-text">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
 var workFormatter = {
@@ -63,38 +63,37 @@ var onlineCoursesFormatter = {
   url: '<br><a href="#">%data%</a>'
 };
 
-var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
 /*
 The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
 */
-$(document).ready(function() {
-  $('button').click(function() {
-    var $name = $('#name');
-    var iName = inName($name.text()) || function(){};
-    $name.html(iName);
-  });
-});
+// $(document).ready(function() {
+//   $('button').click(function() {
+//     var $name = $('#name');
+//     var iName = inName($name.text()) || function(){};
+//     $name.html(iName);
+//   });
+// });
 
 /*
 The next few lines about clicks are for the Collecting Click Locations quiz in Lesson 2.
 */
-var clickLocations = [];
+// var clickLocations = [];
 
-function logClicks(x, y) {
-  clickLocations.push(
-    {
-      x: x,
-      y: y
-    }
-  );
-  console.log('x location: ' + x + '; y location: ' + y);
-}
+// function logClicks(x, y) {
+//   clickLocations.push(
+//     {
+//       x: x,
+//       y: y
+//     }
+//   );
+//   console.log('x location: ' + x + '; y location: ' + y);
+// }
 
-$(document).click(function(loc) {
-  logClicks(loc.pageX, loc.pageY);
-});
+// $(document).click(function(loc) {
+//   logClicks(loc.pageX, loc.pageY);
+// });
 
 
 
@@ -114,7 +113,7 @@ function initializeMap() {
   var locations;
 
   var mapOptions = {
-    disableDefaultUI: true
+    disableDefaultUI: true,
   };
 
   /*
@@ -122,7 +121,6 @@ function initializeMap() {
   appended to #mapDiv in resumeBuilder.js.
   */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
-
 
   /*
   locationFinder() returns an array of every location string from the JSONs
@@ -141,7 +139,7 @@ function initializeMap() {
     // as described in the Udacity FEND Style Guide:
     // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
     education.schools.forEach(function(school){
-      locations.push(school.location);
+      locations.push(school.city);
     });
 
     // iterates through work locations and appends each location to
@@ -184,7 +182,7 @@ function initializeMap() {
 
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
-      // your code goes here!
+      console.log('clicked');
     });
 
     // this is where the pin actually gets added to the map.
