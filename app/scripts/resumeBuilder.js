@@ -1,6 +1,6 @@
 /*eslint-env jquery*/
 
-// TODO: translate into spanish and japanese
+// TODO: translate into spanish and japanese, add webp images
 
 var bio = {
 	'name': 'Carlos Frias',
@@ -12,7 +12,10 @@ var bio = {
 		'location': 'Rio Fuego 3490, Rio Grande, Tierra del Fuego, Argentina',
 		'twitter': ''
 	},
-	'picture': 'images/picture.jpg',
+	'picture': {
+		'fallback': 'images/picture.jpg',
+		'set': 'images/450/picture.jpg 1x, images/900/picture.jpg 2x',
+	},
 	'skills': [
 		'UI design',
 		'UX design',
@@ -63,7 +66,14 @@ var projects = {
 			'title': 'Cine Rio Grande',
 			'dates': ['2014', '2015'],
 			'description': 'A college project with the object of creating a brand new web site for a cinema that integrates requirements for TPS, MIS and DSS',
-			'images': ['http://placehold.it/600x450', 'http://placehold.it/600x450']
+			'images': [
+				{ 'fallback': 'images/400/project-1-01.jpg',
+					'set': 'images/400/project-1-01.jpg 1x, images/800/project-1-01.jpg 2x'
+				},
+				{ 'fallback': 'images/400/project-1-02.jpg',
+					'set': 'images/400/project-1-02.jpg 1x, images/800/project-1-02.jpg 2x'
+				}
+			]
 		}
 	]
 };
@@ -87,9 +97,6 @@ var education = {
 	]
 };
 
-
-const pHolder = '%data%';
-
 var headerSel = $('header'),
 		contactSel = $('#topContacts');
 
@@ -97,7 +104,9 @@ var headerSel = $('header'),
 
 // Bio
 bio.display = function displayBio() {
-	var bannerSel = $('div[role="banner"]');
+	var bannerSel = $('div[role="banner"]'),
+			formattedPic = '';
+
 	// Display Role and Name
 	bannerSel.prepend(formatEntry(HTMLheaderRole, this.role));
 	bannerSel.prepend(formatEntry(HTMLheaderName, this.name));
@@ -106,7 +115,9 @@ bio.display = function displayBio() {
 	displayer.call(this.contactInfo, contactInfoFormatter, contactSel);
 
 	// Display Picture and Message
-	headerSel.append(formatEntry(HTMLbioPic, this.picture));
+	formattedPic = formatEntry(HTMLbioPic, this.picture.fallback);
+	formattedPic = formatEntry(formattedPic, this.picture.set, '%set%');
+	headerSel.append(formattedPic);
 
 	// Display Skills
 	if(this.skills.length) {
@@ -129,14 +140,17 @@ work.display = function displayWork() {
 
 // Projects
 projects.display = function displayProjects() {
-	var selector = {};
+	var selector = {},
+			formattedImage = '';
 	if(this.projects.length) {
 		this.projects.forEach(function(project){
 			$('#projects').append(HTMLprojectStart);
 			selector = $('.project-entry:last');
 			displayer.call(project, projectFormatter, selector);
 			project.images.forEach(function(image){
-				selector.append(formatEntry(projectFormatter.image, image));
+				formattedImage = formatEntry(projectFormatter.image, image.fallback);
+				formattedImage = formatEntry(formattedImage, image.set, '%set%');
+				selector.append(formattedImage);
 			});
 		});
 	}
@@ -178,7 +192,7 @@ $(function main(){
 	initializeMap();
 });
 
-function formatEntry(formatter, data) {
+function formatEntry(formatter, data, pHolder = '%data%') {
 	return formatter.replace(pHolder, data);
 }
 

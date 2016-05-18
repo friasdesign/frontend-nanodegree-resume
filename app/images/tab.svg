@@ -1,9 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="1920px" height="1200px" viewBox="0 0 1920 1200" enable-background="new 0 0 1920 1200" xml:space="preserve">
-<path fill="#FFFFFF" stroke="#1D1D1B" stroke-miterlimit="10" d="M772.087,621.617l37.35-0.047l-0.513-411.457l-37.35,0.046
-	c0,0,0.075,26.625,0.075,35.5c0,24.167-72.426,58.257-72.397,81.59c0.058,46.136,0.17,136.802,0.22,176.667
-	c0.03,24,72.541,57.91,72.767,81.243C772.326,594.273,772.087,621.617,772.087,621.617z"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1200" viewBox="0 0 1920 1200"><path fill="#FFF" stroke="#1D1D1B" stroke-miterlimit="10" d="M772.087 621.617l37.35-.047-.513-411.457-37.35.046s.075 26.625.075 35.5c0 24.167-72.426 58.257-72.397 81.59l.22 176.667c.03 24 72.541 57.91 72.767 81.243.087 9.114-.152 36.458-.152 36.458z"/></svg>

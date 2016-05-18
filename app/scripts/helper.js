@@ -23,7 +23,7 @@ var contactInfoFormatter = {
   location: '<li><span class="contact-label">location</span><span class="contact-data">%data%</span></li>'
 };
 
-var HTMLbioPic = '<p><img src="%data%" class="biopic" alt="Picture of me and monitors behind"></p>';
+var HTMLbioPic = '<p><img srcset="%set%" src="%data%" class="biopic" alt="Picture of me and monitors behind"></p>';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills-list" class="flex-box"></ul>';
@@ -43,7 +43,7 @@ var projectFormatter = {
   title: '<a href="#">%data%</a>',
   dates: '<div class="date-text">%data%</div>',
   description: '<p><br>%data%</p>',
-  image: '<img src="%data%" alt="project picture">'
+  image: '<img srcset="%set%" src="%data%" alt="project picture">'
 };
 
 var HTMLschoolStart = '<div class="education-entry"></div>';

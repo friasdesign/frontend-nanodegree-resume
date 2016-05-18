@@ -189,7 +189,7 @@ const baseConversion = function(src, dest, size, format) {
 };
 
 var resizeImageTasks = [],
-    imageSizes = [375,750,660,1320];
+    imageSizes = [400, 450, 800, 900];
 
 imageSizes.forEach(function(size){
   var taskName = '';
