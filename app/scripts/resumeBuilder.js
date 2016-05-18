@@ -2,6 +2,7 @@
 
 // TODO: translate into spanish and japanese, add webp images
 
+// --> VARIABLES DECLARATIONS _____________________________________
 var bio = {
 	'name': 'Carlos Frias',
 	'role': 'Front-end Developer',
@@ -106,9 +107,10 @@ var education = {
 		}
 	]
 };
-
 var headerSel = $('header'),
 		contactSel = $('#topContacts');
+
+// <-- END - DEFINING DISPLAY METHOD _____________________________________
 
 // --> DEFINING DISPLAY METHOD _____________________________________
 
@@ -188,15 +190,27 @@ education.display = function displayEducation() {
 
 // <-- END - DEFINING DISPLAY METHOD _______________________________
 
+// --> MAIN _____________________________________________________
+
+// Main function executes code once page is loaded
 $(function main(){
+	// Execute display methods
 	bio.display();
 	work.display();
 	projects.display();
 	education.display();
+	
+	// Add Map and initialize it
 	$('#mapDiv').append(googleMap);
-	$('#footerContacts').html($('#topContacts').html());
 	initializeMap();
+
+	// Add data to footer
+	$('#footerContacts').html($('#topContacts').html());
 });
+
+// <-- END - MAIN __________________________________________________
+
+// --> FUNCTION DECLARATIONS _______________________________________
 
 function formatEntry(formatter, data, pHolder = '%data%') {
 	var reg = new RegExp (pHolder, 'g');
@@ -231,3 +245,5 @@ function displayer(formatter, selector) {
 		}
 	}
 }
+
+// <-- END - FUNCTION DECLARATIONS ____________________________________
