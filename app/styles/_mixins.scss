@@ -24,3 +24,7 @@
 	transform: rotate($rotation+deg);
 	opacity: 0.8;
 }
+
+@mixin dropShadow() {
+	box-shadow: 1px 1px 4px #333;
+}

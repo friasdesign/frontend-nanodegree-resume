@@ -55,7 +55,7 @@ var work = {
 			'employer': 'Digital Fueguina SA',
 			'title': 'Maintenance Operator',
 			'location': 'Rio Grande, Tierra del Fuego, Argentina',
-			'dates': ['2015', '2015'],
+			'dates': ['August 2015', 'December 2015'],
 			'description': 'Follow instructions from Maintenance engineers for tasks such as: creating workstations, creating tools for production.'
 		}
 	]
@@ -64,7 +64,7 @@ var projects = {
 	'projects': [
 		{
 			'title': 'Cine Rio Grande',
-			'dates': ['2014', '2015'],
+			'dates': ['December 2014', 'June 2015'],
 			'description': 'A college project with the object of creating a brand new web site for a cinema that integrates requirements for TPS, MIS and DSS',
 			'images': [
 				{ 'fallback': 'images/400/project-1-01.jpg',
@@ -91,7 +91,7 @@ var education = {
 		{
 			'title': 'Front-end Developer Nanodegree',
 			'school': 'Udacity',
-			'dates': ['2016', '2016'],
+			'dates': ['2016', 'Present'],
 			'url': 'www.udacity.com'
 		}
 	]
@@ -189,6 +189,7 @@ $(function main(){
 		$(this).siblings('.active').toggleClass('active');
 		$(this).toggleClass('active');
 	});
+	$('#footerContacts').html($('#topContacts').html());
 	initializeMap();
 });
 

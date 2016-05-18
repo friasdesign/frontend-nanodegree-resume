@@ -1,4 +1,30 @@
 footer {
+  min-height: 4em;
+  font-family: 'Over The Rainbow', cursive;
+  color: rgb(62,125,188);
+  width: 100%;
+  margin-top: 1em;
   background-color: #ffe97d;
   background-image: url("http://www.transparenttextures.com/patterns/lined-paper.png");
+  @include dropShadow();
+  &>h2 {
+    text-align: center;
+    width: 100%;
+    text-decoration: underline;
+    margin: 0 0 0.5em 0;
+  }
+}
+
+#footerContacts {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0.5em;
+  font-size: 0.9em;
+  &>li {
+    width: 100%;
+    &>.contact-label:after {
+      margin-right: 0.7em;
+    }
+  }
 }
