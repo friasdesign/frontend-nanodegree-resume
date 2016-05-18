@@ -10,6 +10,62 @@ Don't worry, you'll learn what's going on in this file throughout the course. Yo
 Cameron Pittman
 */
 
+var HTMLheaderName = '<h1 id="name">%data%</h1>';
+var HTMLheaderRole = '<span>%data%</span>';
+
+var contactInfoFormatter = {
+  generic: '<li><span class="contact-label">%contact%</span><span class="contact-data">%data%</span></li>',
+  mobile: '<li><span class="contact-label">mobile</span><span class="contact-data">%data%</span></li>',
+  email: '<li><span class="contact-label">email</span><span class="contact-data">%data%</span></li>',
+  twitter: '<li><span class="contact-label">twitter</span><span class="contact-data">%data%</span></li>',
+  github: '<li><span class="contact-label">github</span><span class="contact-data">%data%</span></li>',
+  blog: '<li><span class="contact-label">blog</span><span class="contact-data">%data%</span></li>',
+  location: '<li><span class="contact-label">location</span><span class="contact-data">%data%</span></li>'
+};
+
+var HTMLbioPic = '<p><img src="%data%" class="biopic" alt="Picture of me and monitors behind"></p>';
+var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
+
+var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills-list" class="flex-box"></ul>';
+var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
+
+var HTMLworkStart = '<div class="work-entry"></div>';
+var workFormatter = {
+  employer: '<a href="#">%data%',
+  title: ' - %data%</a>',
+  dates: '<div class="date-text">%data%</div>',
+  location: '<div class="location-text">%data%</div>',
+  description: '<p><br>%data%</p>'
+};
+
+var HTMLprojectStart = '<div class="project-entry"></div>';
+var projectFormatter = {
+  title: '<a href="#">%data%</a>',
+  dates: '<div class="date-text">%data%</div>',
+  description: '<p><br>%data%</p>',
+  image: '<img src="%data%" alt="project picture">'
+};
+
+var HTMLschoolStart = '<div class="education-entry"></div>';
+var schoolFormatter = {
+  name: '<a href="#">%data%',
+  degree: ' -- %data%</a>',
+  dates: '<div class="date-text">%data%</div>',
+  location: '<div class="location-text">%data%</div>',
+  major: '<em><br>Major: %data%</em>'
+};
+
+var HTMLonlineClasses = '<h3>Online Classes</h3>';
+var onlineCoursesFormatter = {
+  title: '<a href="#">%data%',
+  school: ' - %data%</a>',
+  dates: '<div class="date-text">%data%</div>',
+  url: '<br><a href="#">%data%</a>'
+};
+
+var internationalizeButton = '<button>Internationalize</button>';
+var googleMap = '<div id="map"></div>';
+
 /*
 The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
 */

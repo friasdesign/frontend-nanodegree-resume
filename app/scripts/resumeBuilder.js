@@ -1,6 +1,92 @@
 /*eslint-env jquery*/
 
-// TODO: add source images for 1x and 2x, min images
+// TODO: translate into spanish and japanese
+
+var bio = {
+	'name': 'Carlos Frias',
+	'role': 'Front-end Developer',
+	'contactInfo': {
+		'mobile': '+54 9 (02964) 15-510169',
+		'email': 'carlos.a.frias@gmail.com',
+		'github': 'friasdesign',
+		'location': 'Rio Fuego 3490, Rio Grande, Tierra del Fuego, Argentina',
+		'twitter': ''
+	},
+	'picture': 'images/picture.jpg',
+	'skills': [
+		'UI design',
+		'UX design',
+		'JavaScript',
+		'ReactJS',
+		'Jasmine',
+		'Karma',
+		'AngularJS',
+		'HTML5',
+		'CSS3',
+		'Yeoman',
+		'Gulp',
+		'Graphic Design',
+		'Linux',
+		'Spanish',
+		'Japanese',
+		'English'
+	]
+};
+var work = {
+	'jobs': [
+		{
+			'employer': 'Brightstar Fueguina SA',
+			'title': 'Production Operator',
+			'location': 'Rio Grande, Tierra del Fuego, Argentina',
+			'dates': ['2012', '2013'],
+			'description': 'Follow instructions from process engineers and accomplish production goals'
+		},
+		{
+			'employer': 'Diario Provincia 23',
+			'title': 'IT Consultant and Junior Designer',
+			'location': 'Rio Grande, Tierra del Fuego, Argentina',
+			'dates': ['2013', '2015'],
+			'description': 'Design ads for newspapers, assist in IT (i.e. network troubleshooting, OS installing, PC cleaning)'
+		},
+		{
+			'employer': 'Digital Fueguina SA',
+			'title': 'Maintenance Operator',
+			'location': 'Rio Grande, Tierra del Fuego, Argentina',
+			'dates': ['2015', '2015'],
+			'description': 'Follow instructions from Maintenance engineers for tasks such as: creating workstations, creating tools for production.'
+		}
+	]
+};
+var projects = {
+	'projects': [
+		{
+			'title': 'Cine Rio Grande',
+			'dates': ['2014', '2015'],
+			'description': 'A college project with the object of creating a brand new web site for a cinema that integrates requirements for TPS, MIS and DSS',
+			'images': ['http://placehold.it/600x450', 'http://placehold.it/600x450']
+		}
+	]
+};
+var education = {
+	'schools': [
+		{
+			'name': 'Facultad Regional Rio Grande de la UTN',
+			'city': 'Rio Grande, Tierra del Fuego, Argentina',
+			'degree': 'Technical Degree',
+			'dates': ['2013', '2015'],
+			'major': 'Programming'
+		}
+	],
+	'onlineCourses': [
+		{
+			'title': 'Front-end Developer Nanodegree',
+			'school': 'Udacity',
+			'dates': ['2016', '2016'],
+			'url': 'www.udacity.com'
+		}
+	]
+};
+
 
 const pHolder = '%data%';
 
@@ -31,6 +117,7 @@ bio.display = function displayBio() {
 	}
 };
 
+// Work
 work.display = function displayWork() {
 	if(this.jobs.length) {
 		this.jobs.forEach(function(job){
@@ -40,6 +127,7 @@ work.display = function displayWork() {
 	}
 };
 
+// Projects
 projects.display = function displayProjects() {
 	var selector = {};
 	if(this.projects.length) {
@@ -54,6 +142,7 @@ projects.display = function displayProjects() {
 	}
 };
 
+// Education
 education.display = function displayEducation() {
 	var selector = {};
 	if(education.schools.length) {
