@@ -7,9 +7,9 @@ var contactInfoFormatter = {
   generic: '<li><span class="contact-label">%contact%</span><span class="contact-data">%data%</span></li>',
   mobile: '<li><span class="contact-label">mobile</span><a href="tel:%data%" class="contact-data">%data%</a></li>',
   email: '<li><span class="contact-label">email</span><a href="mailto:%data%" class="contact-data">%data%</a></li>',
-  twitter: '<li><span class="contact-label">twitter</span><a href="%url%" class="contact-data">%data%</a></li>',
-  github: '<li><span class="contact-label">github</span><a href="%url%" class="contact-data">%data%</a></li>',
-  blog: '<li><span class="contact-label">blog</span><a class="contact-data">%data%</a></li>',
+  twitter: '<li><span class="contact-label">twitter</span><span class="contact-data">%data%</span></li>',
+  github: '<li><span class="contact-label">github</span><span class="contact-data">%data%</span></li>',
+  blog: '<li><span class="contact-label">blog</span><span class="contact-data">%data%</span></li>',
   location: '<li><span class="contact-label">location</span><span class="contact-data">%data%</span></li>'
 };
 
@@ -42,7 +42,7 @@ var schoolFormatter = {
   degree: ' -- %data%</a>',
   dates: '<div class="date-text">%data%</div>',
   location: '<div class="location-text">%data%</div>',
-  major: '<em><br>Major: %data%</em>'
+  majors: '<em><br>Major: %data%</em>'
 };
 
 var HTMLonlineClasses = '<h3>Online Classes</h3>';
@@ -122,14 +122,14 @@ function initializeMap() {
     locations = [];
 
     // adds the single location property from bio to the locations array
-    locations.push(bio.contactInfo.location);
+    locations.push(bio.contacts.location);
 
     // iterates through school locations and appends each location to
     // the locations array. Note that forEach is used for array iteration
     // as described in the Udacity FEND Style Guide:
     // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
     education.schools.forEach(function(school){
-      locations.push(school.city);
+      locations.push(school.location);
     });
 
     // iterates through work locations and appends each location to

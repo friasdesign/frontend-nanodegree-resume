@@ -1,3 +1,4 @@
+/*jshint multistr: true */
 /*eslint-env jquery*/
 
 // TODO: translate into spanish and japanese, add webp images
@@ -6,20 +7,14 @@
 var bio = {
 	'name': 'Carlos Frias',
 	'role': 'Front-end Developer',
-	'contactInfo': {
+	'contacts': {
 		'mobile': '+54 9 (02964) 15-510169',
 		'email': 'carlos.a.frias@gmail.com',
-		'github': {
-			'account': 'friasdesign',
-			'url': 'https://github.com/friasdesign'
-		},
-		'location': 'Rio Grande, Tierra del Fuego, Argentina',
-		'twitter': ''
+		'github': 'friasdesign',
+		'location': 'Rio Grande, Tierra del Fuego, Argentina'
 	},
-	'picture': {
-		'fallback': 'images/picture.jpg',
-		'set': 'images/450/picture.jpg 1x, images/900/picture.jpg 2x',
-	},
+	'biopic': 'images/picture.jpg',
+	'biopicSet': 'images/450/picture.jpg 1x, images/900/picture.jpg 2x', 
 	'skills': [
 		'UI design',
 		'UX design',
@@ -45,22 +40,26 @@ var work = {
 			'employer': 'Brightstar Fueguina SA',
 			'title': 'Production Operator',
 			'location': 'Rio Grande, Tierra del Fuego, Argentina',
-			'dates': ['2012', '2013'],
-			'description': 'Follow instructions from process engineers and accomplish production goals'
+			'dates': '2012 - 2013',
+			'description': 'Follow instructions from process engineers and \
+											accomplish production goals'
 		},
 		{
 			'employer': 'Diario Provincia 23',
 			'title': 'IT Consultant and Junior Designer',
 			'location': 'Rio Grande, Tierra del Fuego, Argentina',
-			'dates': ['2013', '2015'],
-			'description': 'Design ads for newspapers, assist in IT (i.e. network troubleshooting, OS installing, PC cleaning)'
+			'dates': '2012 - 2015',
+			'description': 'Design ads for newspapers, assist in IT (i.e. network \
+											troubleshooting, OS installing, PC cleaning)'
 		},
 		{
 			'employer': 'Digital Fueguina SA',
 			'title': 'Maintenance Operator',
 			'location': 'Rio Grande, Tierra del Fuego, Argentina',
-			'dates': ['August 2015', 'December 2015'],
-			'description': 'Follow instructions from Maintenance engineers for tasks such as: creating workstations, creating tools for production.'
+			'dates': 'August 2015 - December 2015',
+			'description': 'Follow instructions from Maintenance engineers for tasks \
+											such as: creating workstations, creating tools \
+											for production.'
 		}
 	]
 };
@@ -68,15 +67,17 @@ var projects = {
 	'projects': [
 		{
 			'title': 'Cine Rio Grande',
-			'dates': ['December 2014', 'June 2015'],
-			'description': 'A college project with the object of creating a brand new web site for a cinema that integrates requirements for TPS, MIS and DSS',
+			'dates': 'December 2014 - June 2015',
+			'description': 'A college project with the object of creating a brand \
+											new web site for a cinema that integrates requirements \
+											for TPS, MIS and DSS',
 			'images': [
-				{ 'fallback': 'images/400/project-1-01.jpg',
-					'set': 'images/400/project-1-01.jpg 1x, images/800/project-1-01.jpg 2x'
-				},
-				{ 'fallback': 'images/400/project-1-02.jpg',
-					'set': 'images/400/project-1-02.jpg 1x, images/800/project-1-02.jpg 2x'
-				}
+				'images/400/project-1-01.jpg',
+				'images/400/project-1-02.jpg',
+			],
+			'imagesSet': [ 
+				'images/400/project-1-01.jpg 1x, images/800/project-1-01.jpg 2x',
+				'images/400/project-1-02.jpg 1x, images/800/project-1-02.jpg 2x'
 			]
 		}
 	]
@@ -85,50 +86,51 @@ var education = {
 	'schools': [
 		{
 			'name': 'Escuela Superior de Musica de la UNT',
-			'city': 'San Miguel de Tucuman, Tucuman, Argentina',
 			'degree': 'Technical Degree',
-			'dates': ['2008', '2011'],
-			'major': 'Musical Education - Piano'
+			'location': 'San Miguel de Tucuman, Tucuman, Argentina',
+			'dates': '2008 - 2011',
+			'majors': ['Musical Education - Piano'],
+			'url': ''
 		},
 		{
 			'name': 'Facultad Regional Rio Grande de la UTN',
-			'city': 'Rio Grande, Tierra del Fuego, Argentina',
 			'degree': 'Technical Degree',
-			'dates': ['2013', '2015'],
-			'major': 'Programming'
+			'location': 'Rio Grande, Tierra del Fuego, Argentina',
+			'dates': '2013 - 2015',
+			'majors': ['Programming'],
+			'url': ''
 		}
 	],
 	'onlineCourses': [
 		{
 			'title': 'Front-end Developer Nanodegree',
 			'school': 'Udacity',
-			'dates': ['2016', 'Present'],
+			'date': 'April 2016',
 			'url': 'www.udacity.com'
 		}
 	]
 };
-var headerSel = $('header'),
-		contactSel = $('#topContacts');
-
-// <-- END - DEFINING DISPLAY METHOD _____________________________________
+// <-- END - DEFINING VARIABLES _____________________________________
 
 // --> DEFINING DISPLAY METHOD _____________________________________
 
 // Bio
 bio.display = function displayBio() {
 	var bannerSel = $('div[role="banner"]'),
-			formattedPic = '';
+			formattedPic = '',
+			headerSel = $('header'),
+			contactSel = $('#topContacts');
 
 	// Display Role and Name
 	bannerSel.prepend(formatEntry(HTMLheaderRole, this.role));
 	bannerSel.prepend(formatEntry(HTMLheaderName, this.name));
 
-	// Display contactInfo
-	displayer.call(this.contactInfo, contactInfoFormatter, contactSel);
+	// Display contacts
+	displayer.call(this.contacts, contactInfoFormatter, contactSel);
 
 	// Display Picture and Message
-	formattedPic = formatEntry(HTMLbioPic, this.picture.fallback);
-	formattedPic = formatEntry(formattedPic, this.picture.set, '%set%');
+	formattedPic = formatEntry(HTMLbioPic, this.biopic);
+	formattedPic = formatEntry(formattedPic, this.biopicSet, '%set%');
 	headerSel.append(formattedPic);
 
 	// Display Skills
@@ -138,6 +140,8 @@ bio.display = function displayBio() {
 			$('#skills-list').append(formatEntry(HTMLskills, skill));
 		});
 	}
+	// Add data to footer
+	$('#footerContacts').html($('#topContacts').html());
 };
 
 // Work
@@ -159,11 +163,11 @@ projects.display = function displayProjects() {
 			$('#projects').append(HTMLprojectStart);
 			selector = $('.project-entry:last');
 			displayer.call(project, projectFormatter, selector);
-			project.images.forEach(function(image){
-				formattedImage = formatEntry(projectFormatter.image, image.fallback);
-				formattedImage = formatEntry(formattedImage, image.set, '%set%');
+			project.images.forEach(function(image, i){
+				formattedImage = formatEntry(projectFormatter.image, image);
+				formattedImage = formatEntry(formattedImage, this.imagesSet[i], '%set%');
 				selector.append(formattedImage);
-			});
+			}, project);
 		});
 	}
 };
@@ -203,9 +207,6 @@ $(function main(){
 	// Add Map and initialize it
 	$('#mapDiv').append(googleMap);
 	initializeMap();
-
-	// Add data to footer
-	$('#footerContacts').html($('#topContacts').html());
 });
 
 // <-- END - MAIN __________________________________________________

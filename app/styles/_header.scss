@@ -11,8 +11,8 @@ header {
 		padding: 1em;
 		width: 100%;
 		text-align: center;
-		box-shadow: 2px 2px 8px #ADADAD;
-		background-color: #F9F9F9;
+		box-shadow: 2px 2px 8px #adadad;
+		background-color: #f9f9f9;
 
 		@include mobileFirst(560px) {
 			width: 50%;
