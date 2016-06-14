@@ -1,6 +1,8 @@
 # RESUME PROJECT
-## Introduction
 This project is part of Front-end Developer Nanodegree. And it's been done according to this project's [rubric](https://review.udacity.com/?_ga=1.31968702.1488820855.1459955965#!/projects/2962818615/rubric).
+
+## Live Demo
+You can find a live demo of this project [here](http://friasdesign.github.io/resume__site/).
 
 ## Notes
 All fonts used here are ***100% free***.
