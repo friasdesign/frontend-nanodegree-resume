@@ -14,7 +14,7 @@ var bio = {
 		'location': 'Rio Grande, Tierra del Fuego, Argentina'
 	},
 	'biopic': 'images/picture.jpg',
-	'biopicSet': 'images/450/picture.jpg 1x, images/900/picture.jpg 2x', 
+	'biopicSet': 'images/450/picture.jpg 1x, images/900/picture.jpg 2x',
 	'skills': [
 		'UI design',
 		'UX design',
@@ -41,25 +41,25 @@ var work = {
 			'title': 'Production Operator',
 			'location': 'Rio Grande, Tierra del Fuego, Argentina',
 			'dates': '2012 - 2013',
-			'description': 'Follow instructions from process engineers and \
-											accomplish production goals'
+			'description': 'Follow instructions from process engineers and ' +
+											'accomplish production goals'
 		},
 		{
 			'employer': 'Diario Provincia 23',
 			'title': 'IT Consultant and Junior Designer',
 			'location': 'Rio Grande, Tierra del Fuego, Argentina',
 			'dates': '2012 - 2015',
-			'description': 'Design ads for newspapers, assist in IT (i.e. network \
-											troubleshooting, OS installing, PC cleaning)'
+			'description': 'Design ads for newspapers, assist in IT (i.e. network ' +
+											'troubleshooting, OS installing, PC cleaning)'
 		},
 		{
 			'employer': 'Digital Fueguina SA',
 			'title': 'Maintenance Operator',
 			'location': 'Rio Grande, Tierra del Fuego, Argentina',
 			'dates': 'August 2015 - December 2015',
-			'description': 'Follow instructions from Maintenance engineers for tasks \
-											such as: creating workstations, creating tools \
-											for production.'
+			'description': 'Follow instructions from Maintenance engineers for tasks' +
+											' such as: creating workstations, creating tools ' +
+											'for production.'
 		}
 	]
 };
@@ -68,14 +68,14 @@ var projects = {
 		{
 			'title': 'Cine Rio Grande',
 			'dates': 'December 2014 - June 2015',
-			'description': 'A college project with the object of creating a brand \
-											new web site for a cinema that integrates requirements \
-											for TPS, MIS and DSS',
+			'description': 'A college project with the object of creating a brand ' +
+											'new web site for a cinema that integrates requirements ' +
+											'for TPS, MIS and DSS',
 			'images': [
 				'images/400/project-1-01.jpg',
-				'images/400/project-1-02.jpg',
+				'images/400/project-1-02.jpg'
 			],
-			'imagesSet': [ 
+			'imagesSet': [
 				'images/400/project-1-01.jpg 1x, images/800/project-1-01.jpg 2x',
 				'images/400/project-1-02.jpg 1x, images/800/project-1-02.jpg 2x'
 			]
@@ -203,7 +203,7 @@ $(function main(){
 	work.display();
 	projects.display();
 	education.display();
-	
+
 	// Add Map and initialize it
 	$('#mapDiv').append(googleMap);
 	initializeMap();
@@ -214,7 +214,7 @@ $(function main(){
 // --> FUNCTION DECLARATIONS _______________________________________
 
 function formatEntry(formatter, data, pHolder = '%data%') {
-	var reg = new RegExp (pHolder, 'g');
+	var reg = new RegExp(pHolder, 'g');
 	return formatter.replace(reg, data);
 }
 
